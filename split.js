@@ -33,10 +33,7 @@ assert.deepEqual(str.split(/\[\*(a)\]/), [ 'refreshHeaders[*].deepArr[*].zz.*._e
 
 
 // Syntax errors - invalid regular expressions
+// /(*)/  => unescaping special char *
+assert.throws(function () { str.split(/(*)/) }, /Invalid regular expression/)
 // /\[(*)\]/
-
-/**
- * NOTES:
- * for split there is no need to use g (global search) in regeX.
- * even without g it searrches globally. this is not the case with replace
- */
+assert.throws(function () { str.split(/\[(*)\]/) }, /Invalid regular expression/)
