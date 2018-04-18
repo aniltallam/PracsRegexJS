@@ -22,5 +22,3 @@ assert.equal(str.replace(/\[(\*)\]/g, '$'), 'refreshHeaders$.deepArr$.zz.*._extI
 
 // Common mistakes
 assert.equal(str.replace(/\[*\]/g, '$'), 'refreshHeaders[*$.deepArr[*$.zz.*._extId')
-
-
